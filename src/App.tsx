@@ -1,7 +1,7 @@
 import { FormEvent, useState, useEffect } from 'react';
 import Nav from './components/Nav';
 import Notification from './components/Notification';
-// import bgimg from '../public/BGimg.jpg';
+import { Analytics } from '@vercel/analytics/react';
 
 type datatype = {
 	ok: boolean;
@@ -93,7 +93,7 @@ export default function App() {
 						type="submit"
 						className={`${
 							buttonState === 'short' ? 'bg-secondery' : 'bg-green'
-						} w-full md:flex px-5 py-3 md:py-6 md:px-7 lg:px-16 rounded-md text-primary font-medium text-xl uppercase mt-4 md:mt-0 md:ml-4 duration-300 transition-all`}
+						} w-full md:flex md:w-auto px-5 py-3 md:py-6 md:px-7 lg:px-16 rounded-md text-primary font-medium text-xl uppercase mt-4 md:mt-0 md:ml-4 duration-300 transition-all`}
 						onClick={() => {
 							if (buttonState === 'short') {
 								submitHandlear();
@@ -121,6 +121,7 @@ export default function App() {
 					Himu
 				</a>
 			</div>
+			<Analytics />
 		</main>
 	);
 }
